@@ -1,7 +1,10 @@
 export const data = {
-  title: {
-    partOne: "Wir sind die",
-    partTwo: "Veränderung",
+  titleSection: {
+    title: {
+      partOne: "Wir sind die",
+      partTwo: "Veränderung",
+    },
+    bgVideo: "video/video-background-trainer.mp4",
   },
 
   sectionTwo: {

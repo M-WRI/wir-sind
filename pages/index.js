@@ -10,14 +10,17 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ content }) {
-  const { title, sectionTwo, sectionThree, sectionFour } = data;
+  const { titleSection, sectionTwo, sectionThree, sectionFour } = data;
   return (
     <>
       <header className={styles.headSectionContainer}>
-        <h1 className={styles.mainHeadline}>
-          <span>{title.partOne}</span>
-          <span>{title.partTwo}</span>
-        </h1>
+        <video controls="true" autoPlay muted loop className={styles.bgVideo}>
+          <source src={titleSection.bgVideo} type="video/mp4" />
+        </video>
+        {/* <h1 className={styles.mainHeadline}>
+          <span>{titleSection.title.partOne}</span>
+          <span>{titleSection.title.partTwo}</span>
+        </h1> */}
       </header>
       <section className={styles.sectionTwoContainer}>
         <div>
