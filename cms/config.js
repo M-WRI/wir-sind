@@ -1,5 +1,9 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   cms_manual_init: true,
+  editor: {
+    preview: false,
+  },
   backend: {
     name: "github",
     repo: "M-WRI/wir-sind",
@@ -29,6 +33,31 @@ export default {
             },
           ],
         },
+      ],
+    },
+    {
+      name: "protagonists",
+      label: "Protagonisten",
+      folder: "content/protagonists",
+      create: true,
+      slug: "{{slug}}",
+      fields: [
+        { label: "Layout", name: "layout", widget: "hidden", default: "blog" },
+        { label: "Bild", name: "image", widget: "image" },
+        { label: "Name", name: "name", widget: "string" },
+        { label: "Biography", name: "bio", widget: "markdown" },
+      ],
+    },
+    {
+      name: "supporters",
+      label: "Förderer",
+      folder: "content/supporters",
+      create: true,
+      slug: "{{slug}}",
+      fields: [
+        { label: "Layout", name: "layout", widget: "hidden", default: "blog" },
+        { label: "Bild", name: "image", widget: "image" },
+        { label: "Name", name: "name", widget: "string" },
       ],
     },
   ],
