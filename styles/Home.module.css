@@ -78,9 +78,9 @@
   text-align: center;
 }
 
-/* ============= */
-/* SECTION THREE */
-/* ============= */
+/* ============ */
+/* SECTION FOUR */
+/* ============ */
 .sectionFourContainer {
   margin: 100px 0;
   padding: 0 2rem;
@@ -91,9 +91,9 @@
 }
 
 /* ============ */
-/* SECTION FOUR */
+/* SECTION FIVE */
 /* ============ */
-.sectionFour {
+.sectionFiveContainer {
   margin: 100px 0;
   padding: 0 2rem;
   display: grid;

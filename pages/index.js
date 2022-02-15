@@ -56,7 +56,7 @@ export default function Home({ content }) {
           />
         </div>
       </section>
-      <section className={styles.sectionFour}>
+      <section className={styles.sectionFiveContainer}>
         {protagonists.map((protagonist) => (
           <div key={protagonist.id}>
             <div className={styles.protagonistImage}>

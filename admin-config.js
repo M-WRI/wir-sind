@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
+module.exports = {
   cms_manual_init: true,
   editor: {
     preview: false,
@@ -9,7 +8,7 @@ export default {
     repo: "M-WRI/wir-sind",
     branch: "main",
   },
-  media_folder: "public/img",
+  media_folder: "public/images",
   public_folder: "img",
   collections: [
     {
