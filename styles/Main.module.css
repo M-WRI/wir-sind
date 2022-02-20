@@ -1,0 +1,106 @@
+.sectionHeadline {
+  font-size: var(--section-head-font-size);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 50px;
+  color: var(--secondary-color);
+}
+
+.white {
+  color: var(--white);
+}
+
+/* ====== */
+/* HEADER */
+/* ====== */
+.headerContainer {
+  position: relative;
+}
+
+.mainHeadline {
+  font-size: 7.5rem;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 50px;
+}
+
+.titleImageContainer {
+  position: relative;
+  width: calc(100vw - 8rem);
+  height: 55vw;
+  margin: 0 auto;
+}
+
+.premiereBtn {
+  width: 240px;
+  height: 240px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  position: relative;
+  left: 3vw;
+  bottom: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-20deg);
+  box-shadow: 10px 10px 17px 10px rgba(0, 0, 0, 0.05);
+}
+
+.buttonHeadline {
+  font-size: 1.875rem;
+  color: var(--white);
+}
+
+.buttonSubHead {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+/* =========== */
+/* SECTION TWO */
+/* =========== */
+.sectionTwoContainer {
+  background: var(--secondary-color);
+  padding: 50px 4rem;
+}
+
+.videoContainer {
+  margin-bottom: 50px;
+}
+
+/* ============= */
+/* SECTION THREE */
+/* ============= */
+.sectionThreeContainer {
+  padding: 50px 4rem;
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+/* ============ */
+/* SECTION FOUR */
+/* ============ */
+.sectionFourContainer {
+  background: var(--secondary-color);
+  padding: 50px 4rem;
+}
+
+/* ============ */
+/* SECTION FIVE */
+/* ============ */
+.sectionFiveContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  padding: 50px 4rem;
+}

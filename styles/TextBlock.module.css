@@ -1,0 +1,30 @@
+.textBlockContainer {
+  font-size: var(--text-font-size);
+  line-height: 1.5;
+}
+
+.textBlockContainer p {
+  margin-bottom: 50px;
+}
+
+.light {
+  color: var(--white);
+}
+
+.dark {
+  color: var(--secondary-color);
+}
+
+.isVisible {
+  overflow: hidden;
+}
+
+.no {
+  max-height: 0px;
+  transition: all 0.8s;
+}
+
+.yes {
+  max-height: 10000px;
+  transition: all 0.8s;
+}
