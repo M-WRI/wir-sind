@@ -4,10 +4,9 @@ import Link from "next/link";
 import styles from "../styles/InfoCard.module.css";
 
 const InfoCard = ({ data }) => {
-  console.log(data, "<-----");
   const { title, zoom_link, zoom_link_title, schedule } = data;
   return (
-    <Link href={zoom_link}>
+    <Link href={zoom_link} passHref>
       <div className={styles.infoCardContainer}>
         <h3 className={styles.infoCardHeadline}>{title}</h3>
         <span className={styles.infoCardSubHead}>

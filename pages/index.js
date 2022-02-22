@@ -1,151 +1,127 @@
-// data
-import { data } from "../data/home";
-import { protagonists } from "../data/protagonists";
+import Image from "next/image";
+import Link from "next/link";
+import ReactPlayer from "react-player";
 import { images } from "../data/imageSlider";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+
+// styles
+import styles from "../styles/Main.module.css";
 
 // components
-import { useState } from "react";
-import ReactMarkdown from "react-markdown";
-import ReactPlayer from "react-player";
-import Image from "next/image";
+import TextBlock from "../components/TextBlock";
+import InfoCard from "../components/InfoCard";
+import Protagonist from "../components/Protagonist";
 
-// import { getStaticProps } from "next";
-import styles from "../styles/Home.module.css";
-
-export default function Home({ content }) {
-  const { titleSection, sectionTwo, sectionThree, sectionFour } = data;
-
-  const { premiere_title, premiere_sub_title, premiere_description } =
+const Main = ({ content }) => {
+  const { the_movie, the_premiere, the_project, the_protagonists } =
     content.attributes;
 
+  console.log(images, "<-----");
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+
   return (
-    <>
-      <header className={styles.headSectionContainer}>
-        <div className={styles.titleImageWrapper}>
+    <main className={styles.mainContainer}>
+      <header className={styles.headerContainer}>
+        <h1 className={styles.mainHeadline}>
+          <span>Wir sind die</span> <span>Veränderung</span>
+        </h1>
+        <div className={styles.titleImageContainer}>
           <Image
-            src="/images/title-image-2.jpg"
-            alt="title-image"
+            src="/images/title-image.jpg"
+            alt="Wir sind die Veränderung"
             layout="fill"
             objectFit="cover"
+            priority
           />
         </div>
-      </header>
-      <section className={styles.sectionTwoContainer}>
-        <div>
-          <h2 className={styles.sectionHeadline}>{premiere_title}</h2>
-          <h3 className={styles.sectionSubHeadline}>{premiere_sub_title}</h3>
-          <p className={styles.sectionText}>
-            {sectionTwo.blockOne.textBlockOne}
-          </p>
-
-          <p className={styles.sectionText}>
-            {sectionTwo.blockOne.textBlockOne}
-          </p>
-
-          <p className={styles.sectionText}>
-            {sectionTwo.blockOne.textBlockTwo}
-          </p>
-
-          <p className={styles.sectionText}>
-            {sectionTwo.blockOne.textBlockThree}
-          </p>
-
-          <p className={styles.sectionText}>
-            {sectionTwo.blockOne.textBlockFour}
-          </p>
-
-          <p className={styles.sectionText}>
-            {sectionTwo.blockOne.textBlockFive}
-          </p>
-        </div>
-        <div>
-          <div className={styles.infoCard}>
-            <h2 className={styles.infoCardHeadline}>8. März 2022</h2>
-            <span className="Z">
-              <strong>Zoom:</strong> XYZ123456789ABC
-            </span>
-            <div>
-              <h3>Ablauf</h3>
-              <ul>
-                <li>
-                  <strong>19:00</strong> – Begrüßung
-                </li>
-                <li>
-                  <strong>19:30</strong> – Ausstrahlung
-                </li>
-                <li>
-                  <strong>20:15</strong> – Wie geht es weiter?
-                </li>
-              </ul>
-            </div>
+        <Link href="#" passHref={true} target="blank">
+          <div className={styles.premiereBtn}>
+            <h3 className={styles.buttonHeadline}>8. März 2022</h3>
+            <h4 className={styles.buttonSubHead}>
+              <strong>ZOOM:</strong> XYZ123456789ABC
+            </h4>
           </div>
-        </div>
-        {/* <div>
-          <h2 className={styles.sectionHeadline}>
-            {sectionTwo.blockTwo.title}
-          </h2>
-          <p className={styles.sectionText}>{sectionTwo.blockTwo.text}</p>
-        </div> */}
-      </section>
-      <section className={styles.sectionThreeContainer}>
-        <div className={styles.contentWrapper}>
-          <h2 className={styles.sectionHeadline}>{sectionThree.title}</h2>
-          <p className={styles.sectionText}>{sectionThree.text}</p>
-        </div>
-      </section>
-      <section className={styles.sectionFourContainer}>
-        <div>
-          <h2 className={styles.sectionHeadline}>{sectionFour.title}</h2>
-          <p className={styles.sectionText}>{sectionFour.text}</p>
-        </div>
-        <div>
+        </Link>
+      </header>
+      {/* =========== */}
+      {/* SECTION TWO */}
+      {/* =========== */}
+      <section className={styles.sectionTwoContainer}>
+        <h2 className={`${styles.sectionHeadline} ${styles.white}`}>
+          Der Film
+        </h2>
+        <div className={styles.videoContainer}>
           <ReactPlayer
-            url={sectionFour.link}
+            url={the_movie.movie_trailer}
             width={"100%"}
             height={"auto"}
             controls={true}
           />
         </div>
+        <TextBlock data={the_movie.section_description} color="light" />
       </section>
-      <section className={styles.sectionFiveContainer}>
-        {protagonists.map((protagonist) => (
-          <div key={protagonist.id}>
-            <div className={styles.protagonistImage}>
-              <Image
-                src={`/${protagonist.img}`}
-                alt={protagonist.name}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-            <h4 className={styles.protagonistHead}>{protagonist.name}</h4>
-            <p className={styles.protagonistBio}>{protagonist.bio}</p>
+      {/* ============= */}
+      {/* SECTION THREE */}
+      {/* ============= */}
+      <section className={styles.sectionThreeContainer}>
+        <h2 className={`${styles.sectionHeadline}`}>Die Premiere</h2>
+        <div className={styles.sectionGrid}>
+          <div>
+            <TextBlock data={the_premiere.section_description} color="dark" />
           </div>
-        ))}
+          <div>
+            <InfoCard data={the_premiere.info_card} />
+          </div>
+        </div>
       </section>
+      {/* ============ */}
+      {/* SECTION FOUR */}
+      {/* ============ */}
+      <section className={styles.sectionFourContainer}>
+        <h2 className={`${styles.sectionHeadline} ${styles.white}`}>
+          Das Projekt
+        </h2>
+        <TextBlock data={the_project.section_description} color="light" />
+      </section>
+      {/* ============ */}
+      {/* SECTION FIVE */}
+      {/* ============ */}
+      <section className={styles.sectionFiveContainer}>
+        <h2 className={`${styles.sectionHeadline}`}>DIE PROTAGONISTINNEN</h2>
+        <div className={styles.sectionFiveGrid}>
+          <Protagonist data={the_protagonists.list} />
+        </div>
+      </section>
+      {/* =========== */}
+      {/* SECTION SIX */}
+      {/* =========== */}
       <section className={styles.sectionSixContainer}>
-        <div className={styles.containerSlider}>
-          {images.map((image) => (
-            <div key={image.id}>
-              <Image
-                src={`/${image.img}`}
-                alt={image.alt}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-          ))}
-        </div>
-        <div className={styles.btnContainer}>
-          <div className={styles.btnSlider}></div>
-          <div className={styles.btnSlider}></div>
+        <div className="embla" ref={emblaRef}>
+          <div className="embla__container">
+            {images.map((image, index) => (
+              <div key={index} className="embla__slide">
+                <div className="box">
+                  <Image
+                    src={`/${image.img}`}
+                    alt={image.alt}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-    </>
+    </main>
   );
-}
+};
 
 export async function getStaticProps() {
   const content = await import(`../content/pages/${"home"}.md`);
   return { props: { content: content.default } };
 }
+
+export default Main;
