@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import ReactPlayer from "react-player";
-import { images } from "../data/imageSlider";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -14,10 +13,13 @@ import InfoCard from "../components/InfoCard";
 import Protagonist from "../components/Protagonist";
 
 const Main = ({ content }) => {
-  const { the_movie, the_premiere, the_project, the_protagonists } =
-    content.attributes;
-
-  console.log(images, "<-----");
+  const {
+    the_movie,
+    the_premiere,
+    the_project,
+    the_protagonists,
+    image_gallery,
+  } = content.attributes;
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
@@ -100,12 +102,12 @@ const Main = ({ content }) => {
       <section className={styles.sectionSixContainer}>
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
-            {images.map((image, index) => (
+            {image_gallery.list.map((image, index) => (
               <div key={index} className="embla__slide">
                 <div className="box">
                   <Image
-                    src={`/${image.img}`}
-                    alt={image.alt}
+                    src={`/${image.image}`}
+                    alt={image.image_name}
                     layout="fill"
                     objectFit="contain"
                   />

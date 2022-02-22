@@ -245,4 +245,16 @@ the_protagonists:
         ist sie Rabbinerin in der Liberalen Jüdischen Gemeinde in Hameln und
         engagiert sich für gleiche religiöse Rechte für Frauen an der
         Klagemauer.
+image_gallery:
+  list:
+    - image_name: Bild 1
+      image: images/gal-1.jpeg
+    - image_name: Bild 2
+      image: images/gal-2.jpeg
+    - image_name: Bild 3
+      image: images/gal-5.jpeg
+    - image_name: Bild 4
+      image: images/gal-7.jpeg
+    - image_name: Bild 5
+      image: images/gal-3.jpeg
 ---
