@@ -38,8 +38,13 @@ module.exports = {
                   widget: "list",
                   fields: [
                     {
-                      label: "Text Block",
-                      name: "text_block",
+                      label: "Deutsch",
+                      name: "text_block_de",
+                      widget: "markdown",
+                    },
+                    {
+                      label: "Französisch",
+                      name: "text_block_fr",
                       widget: "markdown",
                     },
                   ],
@@ -98,8 +103,13 @@ module.exports = {
                   widget: "list",
                   fields: [
                     {
-                      label: "Text Block",
-                      name: "text_block",
+                      label: "Deutsch",
+                      name: "text_block_de",
+                      widget: "markdown",
+                    },
+                    {
+                      label: "Französisch",
+                      name: "text_block_fr",
                       widget: "markdown",
                     },
                   ],
@@ -143,8 +153,13 @@ module.exports = {
                   widget: "list",
                   fields: [
                     {
-                      label: "Text Block",
-                      name: "text_block",
+                      label: "Deutsch",
+                      name: "text_block_de",
+                      widget: "markdown",
+                    },
+                    {
+                      label: "Französisch",
+                      name: "text_block_fr",
                       widget: "markdown",
                     },
                   ],
@@ -164,7 +179,24 @@ module.exports = {
                   fields: [
                     { label: "Bild", name: "image", widget: "image" },
                     { label: "Name", name: "name", widget: "string" },
-                    { label: "Biografie", name: "bio", widget: "markdown" },
+                    {
+                      label: "DIE PROTAGONISTINNEN",
+                      name: "the_protagonists",
+                      widget: "object",
+                      collapsed: true,
+                      fields: [
+                        {
+                          label: "Deutsch",
+                          name: "bio_de",
+                          widget: "markdown",
+                        },
+                        {
+                          label: "Französisch",
+                          name: "bio_fr",
+                          widget: "markdown",
+                        },
+                      ],
+                    },
                   ],
                 },
               ],

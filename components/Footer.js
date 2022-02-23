@@ -4,12 +4,14 @@ import { AiOutlineMail, AiOutlineInstagram } from "react-icons/ai";
 // style
 import styles from "../styles/Footer.module.css";
 
-const ContactForm = () => {
+const ContactForm = ({ locale }) => {
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.footerWrapper}>
         <div>
-          <h2 className={styles.footerHeadline}>Kontakt</h2>
+          <h2 className={styles.footerHeadline}>
+            {locale === "fr" ? "Contact" : "Kontakt"}
+          </h2>
           <div className={styles.contactDetails}>
             <div className={styles.detailsContainer}>
               <div className={styles.iconWrapper}>
@@ -27,7 +29,9 @@ const ContactForm = () => {
           </div>
         </div>
         <div>
-          <h2 className={styles.footerHeadline}>Mitmachen</h2>
+          <h2 className={styles.footerHeadline}>
+            {locale === "fr" ? "Participer" : "Mitmachen"}
+          </h2>
           <p className={styles.infoText}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

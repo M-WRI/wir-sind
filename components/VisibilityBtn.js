@@ -3,7 +3,7 @@ import Image from "next/image";
 // styles
 import styles from "../styles/VisibilityBtn.module.css";
 
-const VisibilityBtn = ({ isVisible, hidden, color = "dark" }) => {
+const VisibilityBtn = ({ isVisible, hidden, color = "dark", locale }) => {
   return (
     <div
       onClick={isVisible}
@@ -16,7 +16,13 @@ const VisibilityBtn = ({ isVisible, hidden, color = "dark" }) => {
           color === "dark" ? styles.dark : styles.light
         }`}
       >
-        {hidden ? "Mehr Lesen" : "Weniger Lesen"}
+        {locale === "fr"
+          ? hidden
+            ? "Lire Plus"
+            : "Lire Moins"
+          : hidden
+          ? "Mehr Lesen"
+          : "Weniger Lesen"}
       </span>
       <div
         className={`${styles.arrow} ${
@@ -30,6 +36,7 @@ const VisibilityBtn = ({ isVisible, hidden, color = "dark" }) => {
           alt="arrow"
           layout="fill"
           objectFit="contain"
+          priority
         />
       </div>
     </div>

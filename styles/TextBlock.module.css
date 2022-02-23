@@ -30,3 +30,11 @@
   max-height: 10000px;
   transition: all 0.8s;
 }
+
+.textInformationDark {
+  color: var(--white);
+}
+
+.textInformationLight {
+  color: var(--secondary-color);
+}

@@ -3,6 +3,8 @@ import Link from "next/link";
 import ReactPlayer from "react-player";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 
 // styles
 import styles from "../styles/Main.module.css";
@@ -23,16 +25,33 @@ const Main = ({ content }) => {
     image_gallery,
   } = content.attributes;
 
+  const router = useRouter();
+
+  const { locale } = router;
+
+  const [lan, setLan] = useState("de");
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+
+  useEffect(() => {
+    setLan(locale);
+  }, [locale]);
 
   return (
     <>
-      <NavBar />
+      <NavBar locale={lan} setLan={setLan} />
       <main className={styles.mainContainer} id="home">
         <header className={styles.headerContainer}>
-          <h1 className={styles.mainHeadline}>
-            <span>Wir sind die</span> <span>Veränderung</span>
-          </h1>
+          {lan === "fr" ? (
+            <h1 className={styles.mainHeadline}>
+              <span>Nous Sommes</span> <span>Le Changement</span>
+            </h1>
+          ) : (
+            <h1 className={styles.mainHeadline}>
+              <span>Wir sind die</span> <span>Veränderung</span>
+            </h1>
+          )}
+
           <div className={styles.titleImageContainer}>
             <Image
               src="/images/title-image.jpg"
@@ -56,7 +75,7 @@ const Main = ({ content }) => {
         {/* =========== */}
         <section className={styles.sectionTwoContainer} id="der-film">
           <h2 className={`${styles.sectionHeadline} ${styles.white}`}>
-            Der Film
+            {lan === "fr" ? "Le Film" : "Der Film"}
           </h2>
           <div className={styles.videoContainer}>
             <ReactPlayer
@@ -66,16 +85,26 @@ const Main = ({ content }) => {
               controls={true}
             />
           </div>
-          <TextBlock data={the_movie.section_description} color="light" />
+          <TextBlock
+            data={the_movie.section_description}
+            color="light"
+            locale={lan}
+          />
         </section>
         {/* ============= */}
         {/* SECTION THREE */}
         {/* ============= */}
         <section className={styles.sectionThreeContainer} id="die-premiere">
-          <h2 className={`${styles.sectionHeadline}`}>Die Premiere</h2>
+          <h2 className={`${styles.sectionHeadline}`}>
+            {lan === "fr" ? "La Première" : "Die Premiere"}
+          </h2>
           <div className={styles.sectionGrid}>
             <div>
-              <TextBlock data={the_premiere.section_description} color="dark" />
+              <TextBlock
+                data={the_premiere.section_description}
+                color="dark"
+                locale={lan}
+              />
             </div>
             <div>
               <InfoCard data={the_premiere.info_card} />
@@ -87,9 +116,13 @@ const Main = ({ content }) => {
         {/* ============ */}
         <section className={styles.sectionFourContainer} id="das-projekt">
           <h2 className={`${styles.sectionHeadline} ${styles.white}`}>
-            Das Projekt
+            {lan === "fr" ? "Le Projet" : "Das Projekt"}
           </h2>
-          <TextBlock data={the_project.section_description} color="light" />
+          <TextBlock
+            data={the_project.section_description}
+            color="light"
+            locale={lan}
+          />
         </section>
         {/* ============ */}
         {/* SECTION FIVE */}
@@ -98,9 +131,11 @@ const Main = ({ content }) => {
           className={styles.sectionFiveContainer}
           id="die-protagonistinnen"
         >
-          <h2 className={`${styles.sectionHeadline}`}>DIE PROTAGONISTINNEN</h2>
+          <h2 className={`${styles.sectionHeadline}`}>
+            {lan === "fr" ? "Les Protagonistes" : "Die Protagonistinnen"}
+          </h2>
           <div className={styles.sectionFiveGrid}>
-            <Protagonist data={the_protagonists.list} />
+            <Protagonist data={the_protagonists.list} locale={lan} />
           </div>
         </section>
         {/* =========== */}
@@ -125,7 +160,7 @@ const Main = ({ content }) => {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer locale={lan} />
     </>
   );
 };
