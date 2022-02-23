@@ -1,4 +1,5 @@
 .mainContainer {
+  padding-top: 100px;
   background: var(--primary-color);
 }
 
@@ -77,23 +78,18 @@
 /* =========== */
 .sectionTwoContainer {
   background: var(--secondary-color);
-  padding: 50px 4rem;
+  padding: var(--section-space-y) var(--section-space-x);
 }
 
 .videoContainer {
   margin-bottom: 50px;
 }
 
-@media (max-width: 768px) {
-  .sectionTwoContainer {
-    padding: 50px 1.5rem;
-  }
-}
 /* ============= */
 /* SECTION THREE */
 /* ============= */
 .sectionThreeContainer {
-  padding: 50px 4rem;
+  padding: var(--section-space-y) var(--section-space-x);
 }
 
 .sectionGrid {
@@ -112,31 +108,19 @@
   }
 }
 
-@media (max-width: 768px) {
-  .sectionThreeContainer {
-    padding: 50px 1.5rem;
-  }
-}
-
 /* ============ */
 /* SECTION FOUR */
 /* ============ */
 .sectionFourContainer {
   background: var(--secondary-color);
-  padding: 50px 4rem;
-}
-
-@media (max-width: 768px) {
-  .sectionFourContainer {
-    padding: 50px 1.5rem;
-  }
+  padding: var(--section-space-y) var(--section-space-x);
 }
 
 /* ============ */
 /* SECTION FIVE */
 /* ============ */
 .sectionFiveContainer {
-  padding: 50px 4rem;
+  padding: var(--section-space-y) var(--section-space-x);
 }
 
 .sectionFiveGrid {
@@ -151,17 +135,13 @@
   }
 }
 
-@media (max-width: 768px) {
-  .sectionFiveContainer {
-    padding: 50px 1.5rem;
-  }
-
+@media (max-width: 820px) {
   .sectionFiveGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .sectionFiveGrid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -171,11 +151,5 @@
 /* SECTION SIX */
 /* =========== */
 .sectionSixContainer {
-  padding: 50px 4rem;
-}
-
-@media (max-width: 768px) {
-  .sectionSixContainer {
-    padding: 50px 1.5rem;
-  }
+  padding: var(--section-space-y) var(--section-space-x);
 }

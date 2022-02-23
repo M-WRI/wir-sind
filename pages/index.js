@@ -8,6 +8,8 @@ import Autoplay from "embla-carousel-autoplay";
 import styles from "../styles/Main.module.css";
 
 // components
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import TextBlock from "../components/TextBlock";
 import InfoCard from "../components/InfoCard";
 import Protagonist from "../components/Protagonist";
@@ -24,100 +26,107 @@ const Main = ({ content }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   return (
-    <main className={styles.mainContainer}>
-      <header className={styles.headerContainer}>
-        <h1 className={styles.mainHeadline}>
-          <span>Wir sind die</span> <span>Veränderung</span>
-        </h1>
-        <div className={styles.titleImageContainer}>
-          <Image
-            src="/images/title-image.jpg"
-            alt="Wir sind die Veränderung"
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-        </div>
-        <Link href="#" passHref={true} target="blank">
-          <div className={styles.premiereBtn}>
-            <h3 className={styles.buttonHeadline}>8. März 2022</h3>
-            <h4 className={styles.buttonSubHead}>
-              <strong>ZOOM:</strong> XYZ123456789ABC
-            </h4>
+    <>
+      <NavBar />
+      <main className={styles.mainContainer} id="home">
+        <header className={styles.headerContainer}>
+          <h1 className={styles.mainHeadline}>
+            <span>Wir sind die</span> <span>Veränderung</span>
+          </h1>
+          <div className={styles.titleImageContainer}>
+            <Image
+              src="/images/title-image.jpg"
+              alt="Wir sind die Veränderung"
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
           </div>
-        </Link>
-      </header>
-      {/* =========== */}
-      {/* SECTION TWO */}
-      {/* =========== */}
-      <section className={styles.sectionTwoContainer}>
-        <h2 className={`${styles.sectionHeadline} ${styles.white}`}>
-          Der Film
-        </h2>
-        <div className={styles.videoContainer}>
-          <ReactPlayer
-            url={the_movie.movie_trailer}
-            width={"100%"}
-            height={"auto"}
-            controls={true}
-          />
-        </div>
-        <TextBlock data={the_movie.section_description} color="light" />
-      </section>
-      {/* ============= */}
-      {/* SECTION THREE */}
-      {/* ============= */}
-      <section className={styles.sectionThreeContainer}>
-        <h2 className={`${styles.sectionHeadline}`}>Die Premiere</h2>
-        <div className={styles.sectionGrid}>
-          <div>
-            <TextBlock data={the_premiere.section_description} color="dark" />
+          <Link href="#" passHref={true} target="blank">
+            <div className={styles.premiereBtn}>
+              <h3 className={styles.buttonHeadline}>8. März 2022</h3>
+              <h4 className={styles.buttonSubHead}>
+                <strong>ZOOM:</strong> XYZ123456789ABC
+              </h4>
+            </div>
+          </Link>
+        </header>
+        {/* =========== */}
+        {/* SECTION TWO */}
+        {/* =========== */}
+        <section className={styles.sectionTwoContainer} id="der-film">
+          <h2 className={`${styles.sectionHeadline} ${styles.white}`}>
+            Der Film
+          </h2>
+          <div className={styles.videoContainer}>
+            <ReactPlayer
+              url={the_movie.movie_trailer}
+              width={"100%"}
+              height={"auto"}
+              controls={true}
+            />
           </div>
-          <div>
-            <InfoCard data={the_premiere.info_card} />
+          <TextBlock data={the_movie.section_description} color="light" />
+        </section>
+        {/* ============= */}
+        {/* SECTION THREE */}
+        {/* ============= */}
+        <section className={styles.sectionThreeContainer} id="die-premiere">
+          <h2 className={`${styles.sectionHeadline}`}>Die Premiere</h2>
+          <div className={styles.sectionGrid}>
+            <div>
+              <TextBlock data={the_premiere.section_description} color="dark" />
+            </div>
+            <div>
+              <InfoCard data={the_premiere.info_card} />
+            </div>
           </div>
-        </div>
-      </section>
-      {/* ============ */}
-      {/* SECTION FOUR */}
-      {/* ============ */}
-      <section className={styles.sectionFourContainer}>
-        <h2 className={`${styles.sectionHeadline} ${styles.white}`}>
-          Das Projekt
-        </h2>
-        <TextBlock data={the_project.section_description} color="light" />
-      </section>
-      {/* ============ */}
-      {/* SECTION FIVE */}
-      {/* ============ */}
-      <section className={styles.sectionFiveContainer}>
-        <h2 className={`${styles.sectionHeadline}`}>DIE PROTAGONISTINNEN</h2>
-        <div className={styles.sectionFiveGrid}>
-          <Protagonist data={the_protagonists.list} />
-        </div>
-      </section>
-      {/* =========== */}
-      {/* SECTION SIX */}
-      {/* =========== */}
-      <section className={styles.sectionSixContainer}>
-        <div className="embla" ref={emblaRef}>
-          <div className="embla__container">
-            {image_gallery.list.map((image, index) => (
-              <div key={index} className="embla__slide">
-                <div className="box">
-                  <Image
-                    src={`/${image.image}`}
-                    alt={image.image_name}
-                    layout="fill"
-                    objectFit="contain"
-                  />
+        </section>
+        {/* ============ */}
+        {/* SECTION FOUR */}
+        {/* ============ */}
+        <section className={styles.sectionFourContainer} id="das-projekt">
+          <h2 className={`${styles.sectionHeadline} ${styles.white}`}>
+            Das Projekt
+          </h2>
+          <TextBlock data={the_project.section_description} color="light" />
+        </section>
+        {/* ============ */}
+        {/* SECTION FIVE */}
+        {/* ============ */}
+        <section
+          className={styles.sectionFiveContainer}
+          id="die-protagonistinnen"
+        >
+          <h2 className={`${styles.sectionHeadline}`}>DIE PROTAGONISTINNEN</h2>
+          <div className={styles.sectionFiveGrid}>
+            <Protagonist data={the_protagonists.list} />
+          </div>
+        </section>
+        {/* =========== */}
+        {/* SECTION SIX */}
+        {/* =========== */}
+        <section className={styles.sectionSixContainer}>
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container">
+              {image_gallery.list.map((image, index) => (
+                <div key={index} className="embla__slide">
+                  <div className="box">
+                    <Image
+                      src={`/${image.image}`}
+                      alt={image.image_name}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 };
 
