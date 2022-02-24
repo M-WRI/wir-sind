@@ -53,9 +53,9 @@ const ContactForm = ({ locale, data }) => {
       </div>
       <div>
         <ul className={styles.footerLinks}>
-          <li>Impressum</li>
-          <li>DSGVO</li>
-          <li>
+          <li style={{ cursor: "pointer !important" }}>Impressum</li>
+          <li style={{ cursor: "pointer !important" }}>DSGVO</li>
+          <li style={{ cursor: "pointer !important" }}>
             <Link
               href="https://drive.google.com/uc?id=1QqkgmTARfFPutN5BC6irp5R1KvFmnLjo&export=download
 "

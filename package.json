@@ -5,15 +5,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-on-netlify"
   },
   "dependencies": {
-    "@pdftron/webviewer": "^8.3.0",
     "embla-carousel-autoplay": "^6.2.0",
     "embla-carousel-react": "^6.2.0",
+    "find-cache-dir": "^3.3.2",
     "i18next": "^21.6.12",
     "netlify-cms-app": "^2.15.66",
     "next": "12.0.10",
+    "next-on-netlify": "^3.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-i18next": "^11.15.5",

@@ -6,6 +6,7 @@ import styles from "../styles/VisibilityBtn.module.css";
 const VisibilityBtn = ({ isVisible, hidden, color = "dark", locale }) => {
   return (
     <div
+      style={{ cursor: "pointer !important" }}
       onClick={isVisible}
       className={`${styles.visibilityBtnContainer} ${
         hidden ? styles.column : styles.columnReverse
