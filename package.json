@@ -5,8 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postbuild": "next-on-netlify"
+    "lint": "next lint"
   },
   "dependencies": {
     "embla-carousel-autoplay": "^6.2.0",
