@@ -48,6 +48,16 @@
   color: var(--white);
 }
 
+.footerLinks {
+  text-align: right;
+  color: var(--primary-color);
+}
+
+.footerLinks li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
 @media (max-width: 890px) {
   .footerWrapper {
     grid-template-columns: repeat(1, 1fr);

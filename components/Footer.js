@@ -51,6 +51,21 @@ const ContactForm = ({ locale, data }) => {
           </p>
         </div>
       </div>
+      <div>
+        <ul className={styles.footerLinks}>
+          <li>Impressum</li>
+          <li>DSGVO</li>
+          <li>
+            <Link
+              href="https://drive.google.com/uc?id=1QqkgmTARfFPutN5BC6irp5R1KvFmnLjo&export=download
+"
+              passHref={true}
+            >
+              <a>Presse</a>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </footer>
   );
 };
