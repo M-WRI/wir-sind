@@ -1,7 +1,4 @@
 ---
-premiere_title: Die Premiere
-premiere_sub_title: 8 Frauen 4 Religionen 2 Länder der Film
-premiere_description: []
 the_movie:
   movie_trailer: /video/video-background-trainer.mp4
   section_description:
@@ -207,6 +204,12 @@ the_premiere:
         procedure: Ausstrahlung
       - time: 20:15
         procedure: Wie geht es weiter?
+    premiere_title:
+      title_de: 8. März 2022
+      zoom_link_title_fr: Cliquez ici pour la conférence Zoom
+      zoom_link_title_de: Klicken sie hier für die Zoom Konferenz
+      title_fr: 8 Mars 2022
+      zoom_link: "#"
 the_project:
   section_description:
     - text_block_de: >-
@@ -333,8 +336,10 @@ the_project:
     list:
       - supporter_link: https://www.buergerfonds.eu/startseite
         supporter_name: Deutsch-Französischen Bürgerfonds
+        supporter_logo: images/logo_dfbfonds_rgb_transparent.png
       - supporter_name: DEUTSCHER KOORDINIERUNGSRAT E.V.
         supporter_link: https://www.deutscher-koordinierungsrat.de/
+        supporter_logo: images/dkr_logo_claim_links.png
       - supporter_name: Château d’Orion
         supporter_link: https://www.chateau-orion.fr/
       - supporter_name: Musée Jeanne d'Albret
@@ -483,4 +488,25 @@ image_gallery:
       image: images/gal-7.jpeg
     - image_name: Bild 5
       image: images/gal-3.jpeg
+premiere_title: Die Premiere
+premiere_sub_title: 8 Frauen 4 Religionen 2 Länder der Film
+premiere_description: []
+footer:
+  participate:
+    text_block_de: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    text_block_fr: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+  email: mail@veraenderung-changement-change.com
+  link: vorbild_sein
 ---

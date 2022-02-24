@@ -64,19 +64,37 @@ module.exports = {
                   collapsed: true,
                   fields: [
                     {
-                      label: "Titel",
-                      name: "title",
-                      widget: "string",
-                    },
-                    {
-                      label: "Zoom Link Titel",
-                      name: "zoom_link_title",
-                      widget: "string",
-                    },
-                    {
-                      label: "Zoom Link",
-                      name: "zoom_link",
-                      widget: "string",
+                      label: "Premieren Titel",
+                      name: "premiere_title",
+                      widget: "object",
+                      collapsed: true,
+                      fields: [
+                        {
+                          label: "Titel Deutsch",
+                          name: "title_de",
+                          widget: "string",
+                        },
+                        {
+                          label: "Titel Französisch",
+                          name: "title_fr",
+                          widget: "string",
+                        },
+                        {
+                          label: "Zoom Link Titel Deutsch",
+                          name: "zoom_link_title_de",
+                          widget: "string",
+                        },
+                        {
+                          label: "Zoom Link Titel Französisch",
+                          name: "zoom_link_title_fr",
+                          widget: "string",
+                        },
+                        {
+                          label: "Zoom Link",
+                          name: "zoom_link",
+                          widget: "string",
+                        },
+                      ],
                     },
                     {
                       label: "Ablaufplan",
@@ -133,6 +151,12 @@ module.exports = {
                       name: "list",
                       widget: "list",
                       fields: [
+                        {
+                          label: "Logo",
+                          name: "supporter_logo",
+                          widget: "image",
+                          required: false,
+                        },
                         {
                           label: "Name",
                           name: "supporter_name",
@@ -214,6 +238,33 @@ module.exports = {
                   fields: [
                     { label: "Name", name: "image_name", widget: "string" },
                     { label: "Bild", name: "image", widget: "image" },
+                  ],
+                },
+              ],
+            },
+            {
+              label: "FOOTER",
+              name: "footer",
+              widget: "object",
+              collapsed: true,
+              fields: [
+                { label: "Email", name: "email", widget: "string" },
+                { label: "Link", name: "link", widget: "string" },
+                {
+                  label: "Mitmachen",
+                  name: "participate",
+                  widget: "object",
+                  fields: [
+                    {
+                      label: "Deutsch",
+                      name: "text_block_de",
+                      widget: "markdown",
+                    },
+                    {
+                      label: "Französisch",
+                      name: "text_block_fr",
+                      widget: "markdown",
+                    },
                   ],
                 },
               ],

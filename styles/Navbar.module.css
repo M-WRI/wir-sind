@@ -16,6 +16,9 @@
 
 .navBarItems {
   display: flex;
+  background: var(--primary-color);
+  padding: 1rem;
+  border-radius: 20px;
 }
 
 .navBarItem {
@@ -31,6 +34,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.navBarItemLan:last-child {
+  margin-right: unset;
 }
 
 .active {

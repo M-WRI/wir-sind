@@ -23,6 +23,7 @@ const Main = ({ content }) => {
     the_project,
     the_protagonists,
     image_gallery,
+    footer,
   } = content.attributes;
 
   const router = useRouter();
@@ -61,11 +62,21 @@ const Main = ({ content }) => {
               priority
             />
           </div>
-          <Link href="#" passHref={true} target="blank">
+          <Link
+            href={the_premiere.info_card.premiere_title.zoom_link}
+            passHref={true}
+            target="blank"
+          >
             <div className={styles.premiereBtn}>
-              <h3 className={styles.buttonHeadline}>8. März 2022</h3>
+              <h3 className={styles.buttonHeadline}>
+                {lan === "fr"
+                  ? the_premiere.info_card.premiere_title.title_fr
+                  : the_premiere.info_card.premiere_title.title_de}
+              </h3>
               <h4 className={styles.buttonSubHead}>
-                <strong>ZOOM:</strong> XYZ123456789ABC
+                {lan === "fr"
+                  ? the_premiere.info_card.premiere_title.zoom_link_title_fr
+                  : the_premiere.info_card.premiere_title.zoom_link_title_de}
               </h4>
             </div>
           </Link>
@@ -107,7 +118,7 @@ const Main = ({ content }) => {
               />
             </div>
             <div>
-              <InfoCard data={the_premiere.info_card} />
+              <InfoCard data={the_premiere.info_card} locale={lan} />
             </div>
           </div>
         </section>
@@ -123,6 +134,44 @@ const Main = ({ content }) => {
             color="light"
             locale={lan}
           />
+          <div className={styles.supporterContainer}>
+            <div className={styles.mainSupporterWrapper}>
+              {the_project.supporter.list.slice(0, 2).map((el, i) => (
+                <div key={i} className={styles.supporterWrapper}>
+                  <Link href={el.supporter_link} passHref={true}>
+                    <a>
+                      <div className={styles.imageBackground}>
+                        <div className={styles.supporterImageContainer}>
+                          <Image
+                            src={`/${el.supporter_logo}`}
+                            alt={el.supporter_name}
+                            layout="fill"
+                            priority={true}
+                            objectFit="contain"
+                          />
+                        </div>
+                      </div>
+
+                      <div className={styles.supporterName}>
+                        {el.supporter_name}
+                      </div>
+                    </a>
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <div className={styles.supporterListContainer}>
+              <ul>
+                {the_project.supporter.list.slice(2).map((el, i) => (
+                  <li key={i} className={styles.supporterListItem}>
+                    <Link href={el.supporter_link} passHref={true}>
+                      {el.supporter_name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </section>
         {/* ============ */}
         {/* SECTION FIVE */}
@@ -160,7 +209,7 @@ const Main = ({ content }) => {
           </div>
         </section>
       </main>
-      <Footer locale={lan} />
+      <Footer locale={lan} data={footer} />
     </>
   );
 };
