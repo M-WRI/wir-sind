@@ -1,15 +1,12 @@
 module.exports = {
-  cms_manual_init: true,
-  editor: {
-    preview: false,
-  },
+  // cms_manual_init: true,
+  // editor: {
+  //   preview: false,
+  // },
   // local_backend: true,
   backend: {
     name: "git-gateway",
-    // repo: "M-WRI/wir-sind",
     branch: "main",
-    // base_url: "https://www.veraenderung-changement-change.com/",
-    // auth_endpoint: "/auth",
   },
   media_folder: "public/images",
   public_folder: "images",

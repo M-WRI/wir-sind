@@ -15,7 +15,6 @@ import Footer from "../components/Footer";
 import TextBlock from "../components/TextBlock";
 import InfoCard from "../components/InfoCard";
 import Protagonist from "../components/Protagonist";
-import Head from "next/head";
 
 const Main = ({ content }) => {
   const {
@@ -41,9 +40,6 @@ const Main = ({ content }) => {
 
   return (
     <>
-      <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </Head>
       <NavBar locale={lan} setLan={setLan} />
       <main className={styles.mainContainer} id="home">
         <header className={styles.headerContainer}>

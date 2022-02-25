@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: public/images
+public_folder: images
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - { label: "Film Trailer", name: "movie_trailer", widget: "string" }
+          - label: "Beschreibung",
+            name: "section_description",
+            widget: "list",
+            fields:
+              - {label: "Deutsch", name: "text_block_de", widget: "markdown"},
+              - {label: "Französisch", name: "text_block_fr", widget: "markdown"},
