@@ -9,7 +9,7 @@ module.exports = {
     // repo: "M-WRI/wir-sind",
     branch: "main",
     // base_url: "https://www.veraenderung-changement-change.com/",
-    // auth_endpoint: "api/auth",
+    auth_endpoint: "/auth",
   },
   media_folder: "public/images",
   public_folder: "images",
