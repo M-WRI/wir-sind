@@ -3,11 +3,13 @@ module.exports = {
   editor: {
     preview: false,
   },
-  local_backend: true,
+  // local_backend: true,
   backend: {
     name: "github",
     repo: "M-WRI/wir-sind",
     branch: "main",
+    base_url: "https://myapp.test.io",
+    auth_endpoint: "api/auth",
   },
   media_folder: "public/images",
   public_folder: "images",

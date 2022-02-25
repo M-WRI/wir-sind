@@ -6,7 +6,7 @@ import styles from "../styles/Footer.module.css";
 
 const ContactForm = ({ locale, data }) => {
   return (
-    <footer className={styles.footerContainer}>
+    <footer className={styles.footerContainer} id="kontakt">
       <div className={styles.footerWrapper}>
         <div>
           <h2 className={styles.footerHeadline}>
