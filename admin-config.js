@@ -6,7 +6,7 @@ module.exports = {
   // local_backend: true,
   backend: {
     name: "git-gateway",
-    repo: "M-WRI/wir-sind",
+    // repo: "M-WRI/wir-sind",
     branch: "main",
     // base_url: "https://www.veraenderung-changement-change.com/",
     // auth_endpoint: "api/auth",
