@@ -8,7 +8,7 @@ module.exports = {
     name: "github",
     repo: "M-WRI/wir-sind",
     branch: "main",
-    base_url: "https://myapp.test.io",
+    base_url: "https://www.veraenderung-changement-change.com/",
     auth_endpoint: "api/auth",
   },
   media_folder: "public/images",
